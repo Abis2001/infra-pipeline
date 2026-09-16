@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-       /* git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Abis2001/infra-pipeline.git'*/
-       checkout scm
+       git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Abis2001/infra-pipeline.git'
+       
       }
     }
 
@@ -29,9 +29,9 @@ pipeline {
         dir("${TF_WORKDIR}") {
           sh 'pwd'
           sh 'ls -la'
-          sh 'terraform plan -out=tfplan'
+         /* sh 'terraform plan -out=tfplan'
           sh "terraform show -no-color tfplan > tfplan.txt"
-          sh 'cat tfplan.txt'
+          sh 'cat tfplan.txt'*/
         }
       }
     }
