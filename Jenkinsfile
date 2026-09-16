@@ -16,6 +16,8 @@ pipeline {
     stage('Terraform Init') {
       steps {
         dir("${TF_WORKDIR}") {
+          sh 'pwd'
+          sh 'ls -la'
           sh 'terraform init'
         }
       }
@@ -24,6 +26,8 @@ pipeline {
     stage('Terraform Plan') {
       steps {
         dir("${TF_WORKDIR}") {
+          sh 'pwd'
+          sh 'ls -la'
           sh 'terraform plan -out=tfplan'
           sh 'terraform show -no-color tfplan > tfplan.txt'
           sh 'cat tfplan.txt'
