@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-  Environment {
+  environment {
     ENV = "${env.BRANCH_NAME}"
     TF_WORKDIR = "Environment/${env.BRANCH_NAME}"
   }
