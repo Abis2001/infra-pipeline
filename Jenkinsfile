@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-  Environment {
+  environment {
     ENV = "${env.BRANCH_NAME}"
     TF_WORKDIR = "Environment/${env.BRANCH_NAME}"
   }
@@ -28,7 +28,7 @@ pipeline {
         dir("${TF_WORKDIR}") {
           sh 'pwd'
           sh 'ls -la'
-          sh 'terraform plan -out=tfplan'
+          +
           sh 'terraform show -no-color tfplan > tfplan.txt'
           sh 'cat tfplan.txt'
         }
