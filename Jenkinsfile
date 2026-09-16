@@ -52,7 +52,7 @@ pipeline {
         dir("${TF_WORKDIR}") {
           sh 'pwd'
           sh 'ls -la'
-          sh 'terraform apply tfplan'
+          /*sh 'terraform apply tfplan'*/
         }
       }
     }
