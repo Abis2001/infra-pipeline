@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Abis2001/infra-pipeline.git'
+       /* git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Abis2001/infra-pipeline.git'*/
+       checkout scm
       }
     }
 
